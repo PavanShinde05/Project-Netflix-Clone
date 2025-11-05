@@ -10,7 +10,7 @@ ENV VITE_APP_API_ENDPOINT_URL="https://api.themoviedb.org/3"
 RUN yarn build
 
 FROM nginx:stable-alpine
-WORKDIR /usr/share/nginx/html
+WORKDIR /usr/share/nginx/html  
 RUN rm -rf ./*
 COPY --from=builder /app/dist .
 EXPOSE 80     
